@@ -11,7 +11,9 @@ This template is build with [Gulp](http://gulpjs.com/) for tasks, [Sass]() for s
 
 Step 1. Install [NodeJS](http://nodejs.org/download/)
 
-Step 2. Install the npm dependencies
+Step 3. Checkout/ download project
+
+Step 3. Install the npm dependencies
 ```shell
 cd path/to/project
 npm install
