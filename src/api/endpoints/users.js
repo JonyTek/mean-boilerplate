@@ -8,12 +8,12 @@ router.get('/api/user', function (req, res, next) {
 
     User.findOne(query, function (err, user) {
         if (err) {
-            return next(err)
+            return next(err);
         }
         if (!user) {
-            return res.sendStatus(401)
+            return res.sendStatus(401);
         }
-        res.json(user)
+        res.json(user);
     });
 });
 
@@ -25,9 +25,9 @@ router.post('/api/user', function (req, res, next) {
 
     user.save(function (err) {
         if (err) {
-            next(err)
+            next(err);
         }
-        res.sendStatus(201)
+        res.sendStatus(201);
     });
 });
 

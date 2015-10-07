@@ -5,6 +5,8 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
 
 function copy() {
     return gulp.src('src/app/**/*.js')
@@ -37,7 +39,15 @@ gulp.task('delete:js', function () {
     ]);
 });
 
+//Lint all js files
+gulp.task('lint:js', function(){
+    return gulp.src('src/**/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish));
+});
+
+
 //Watch .js files and rebuild on change
 gulp.task('watch:js', ['del-copy:js'], function () {
-    return gulp.watch('src/app/**/*.js', ['copy:js']);
+    return gulp.watch('src/app/**/*.js', ['copy:js', 'lint:js']);
 });

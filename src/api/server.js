@@ -10,7 +10,7 @@ app.use(require('./endpoints/users'));
 app.use(require('./endpoints/static'));
 
 //Start server
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3000;
 var server = app.listen(port, function () {
     console.log("Listening on port", port);
 });

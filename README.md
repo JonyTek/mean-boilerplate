@@ -3,6 +3,9 @@ A starter template for MEAN applications
 
 This template is build with [Gulp](http://gulpjs.com/) for tasks, [Sass]() for styles & [Karma](http://karma-runner.github.io/)/ [Jasmine](http://jasmine.github.io/) for tests.
 
+## Features
+* Full Js linter with [gulp-jshint](https://github.com/spalger/gulp-jshint) and [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) as the reporter
+* Full build automation including minification
 
 ## Getting started
 
@@ -29,4 +32,9 @@ gulp compile
 Build all js & css
 ```shell
 gulp build
+```
+
+Lint all js
+```shell
+gulp lint:js
 ```

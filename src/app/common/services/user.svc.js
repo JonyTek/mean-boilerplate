@@ -1,5 +1,5 @@
 (function () {
-    'use-strinct'
+    'use-strinct';
 
     angular
         .module('mean-bp')

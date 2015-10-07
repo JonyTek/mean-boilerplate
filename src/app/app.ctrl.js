@@ -1,5 +1,5 @@
 (function () {
-    'use-strict'
+    'use-strict';
 
     angular
         .module('mean-bp')
@@ -11,5 +11,5 @@
         var vm = this;
 
         vm.test = 'Testing 1 2 3 4...';
-    };
+    }
 })();

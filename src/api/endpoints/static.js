@@ -1,7 +1,7 @@
-'use-strict'
+'use-strict';
 
 var path = require('path');
-var express = require('express')
+var express = require('express');
 var router = require('express').Router();
 
 //Specify the assets to serve at /vendor
