@@ -6,7 +6,9 @@ This template is build with [Gulp](http://gulpjs.com/) for tasks, [Sass]() for s
 ## Features
 * Full Js linter with [gulp-jshint](https://github.com/spalger/gulp-jshint) and [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) as the reporter
 * Full build automation including minification
-* Unit tests with Jasmine & Karma
+* All templates are stored in $templateCache for increased performance
+* Routing is setup with [ui-router](https://github.com/angular-ui/ui-router)
+* Unit tests with [Jasmine](http://jasmine.github.io/) & [Karma](http://karma-runner.github.io/)
 
 ## Getting started
 
