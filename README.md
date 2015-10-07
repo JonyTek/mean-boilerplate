@@ -1,10 +1,32 @@
 # mean-boilerplate
 A starter template for MEAN applications
 
-Checkout repo
-> npm install
-> gulp dev
+This template is build with [Gulp](http://gulpjs.com/) for tasks, [Sass]() for styles & [Karma](http://karma-runner.github.io/)/ [Jasmine](http://jasmine.github.io/) for tests.
 
-Other commands
-> gulp compile - compile and minify all js files moveing output to the build directory
-> gulp build - compile all individual js files moveing output to the build directory
+
+## Getting started
+
+Step 1. Install [NodeJS](http://nodejs.org/download/)
+
+Step 2. Install the npm dependencies
+```shell
+cd path/to/project
+npm install
+```
+
+Step 4. Run Gulp dev
+```shell
+gulp dev
+```
+
+## Additional gulp commands
+
+Build and minify all js & css
+```shell
+gulp compile
+```
+
+Build all js & css
+```shell
+gulp build
+```
