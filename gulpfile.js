@@ -13,7 +13,7 @@ fs.readdirSync(__dirname + '/gulp').forEach(function (task) {
 });
 
 //Dev task - watch all resources and run server
-gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index', 'watch:assets'], function () {
+gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index', 'watch:assets', 'run:unit'], function () {
     nodemon({
         script: 'src/api/server',
         ext: 'js',

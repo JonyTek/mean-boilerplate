@@ -10,6 +10,6 @@
     function AppCtrl() {
         var vm = this;
 
-        vm.test = 'Testing 1 2 3 4...';
+        vm.message = 'Hello world!';
     }
 })();

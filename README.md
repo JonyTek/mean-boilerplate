@@ -6,12 +6,13 @@ This template is build with [Gulp](http://gulpjs.com/) for tasks, [Sass]() for s
 ## Features
 * Full Js linter with [gulp-jshint](https://github.com/spalger/gulp-jshint) and [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) as the reporter
 * Full build automation including minification
+* Unit tests with Jasmine & Karma
 
 ## Getting started
 
 Step 1. Install [NodeJS](http://nodejs.org/download/)
 
-Step 3. Checkout/ download project
+Step 2. Checkout/ download project
 
 Step 3. Install the npm dependencies
 ```shell
@@ -39,4 +40,9 @@ gulp build
 Lint all js
 ```shell
 gulp lint:js
+```
+
+Run unit tests
+```shell
+gulp run:unit
 ```
