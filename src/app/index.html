@@ -2,17 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title ng-bind="pageTitle"></title>
 
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
     <!-- inject:css -->
     <!-- endinject -->
 
 </head>
 <body ng-app="mean-bp" ng-controller="AppCtrl as app">
 
-{{app.message}}
+<navigation></navigation>
+
+<div class="container main-content">
+    <div ui-view="main"></div>
+
+    {{app.message}}
+
+</div>
 
 <script type="application/javascript" src="vendor/angular.min.js"></script>
+<script type="application/javascript" src="vendor/angular-ui-router.js"></script>
 
 <!-- inject:js -->
 <!-- endinject -->

@@ -4,26 +4,26 @@
     angular
         .module('mean-bp')
         .config(Setup)
-        .controller('HomeCtrl', HomeCtrl);
+        .controller('AboutCtrl', AboutCtrl);
 
     Setup.$inject = ['$stateProvider'];
 
     function Setup($stateProvider) {
-        $stateProvider.state('home', {
-            url: '/',
+        $stateProvider.state('about', {
+            url: '/about',
             views: {
                 "main": {
-                    controller: 'HomeCtrl',
-                    templateUrl: 'home/home.tpl.html'
+                    controller: 'AboutCtrl',
+                    templateUrl: 'about/about.tpl.html'
                 }
             },
-            data: {pageTitle: 'Home'}
+            data: {pageTitle: 'About'}
         });
     }
 
-    HomeCtrl.$inject = [];
+    AboutCtrl.$inject = [];
 
-    function HomeCtrl() {
+    function AboutCtrl() {
         var vm = this;
     }
 })();

@@ -4,6 +4,24 @@ var del = require('del');
 var gulp = require('gulp');
 var inject = require('gulp-inject');
 var series = require('stream-series');
+var templateCache = require('gulp-angular-templatecache');
+
+var templateConfig = {
+    module : 'mean-bp'
+}
+
+function copyDependencies() {
+    var app = gulp.src('build/assets/js/app.js', {read: false});
+    var sources = gulp.src([
+        '!build/assets/js/app.js',
+        'build/assets/js/**/*.js',
+        'build/assets/css/*.css'
+    ], {read: false});
+
+    return gulp.src('build/index.html')
+        .pipe(inject(series(app, sources), {relative: true}))
+        .pipe(gulp.dest('build'));
+};
 
 //Copy index.html to build
 gulp.task('del-copy:index', ['delete:index'], function () {
@@ -25,21 +43,15 @@ gulp.task('inject:index', ['del-copy:index'], function () {
 
 //Watch index.html then copy to build on change
 gulp.task('watch:index', ['del-copy:index'], function () {
-    return gulp.watch('src/app/index.html', ['inject:index']);
+    return gulp.watch('src/app/**/*.html', ['inject:index', 'cache:templates']);
 });
 
-function copyDependencies() {
-    var app = gulp.src('build/assets/js/app.js', {read: false});
-    var sources = gulp.src([
-        '!build/assets/js/app.js',
-        'build/assets/js/**/*.js',
-        'build/assets/css/*.css'
-    ], {read: false});
-
-    return gulp.src('build/index.html')
-        .pipe(inject(series(app, sources), {relative: true}))
-        .pipe(gulp.dest('build'));
-};
+//Add templates to cache
+gulp.task('cache:templates', function () {
+    return gulp.src('src/app/**/*.tpl.html')
+        .pipe(templateCache(('templates', templateConfig)))
+        .pipe(gulp.dest('build/assets/js'));
+});
 
 module.exports = {
     copyDependencies: copyDependencies

@@ -14,7 +14,7 @@ fs.readdirSync(__dirname + '/gulp').forEach(function (task) {
 });
 
 //Dev task - watch all resources and run server
-gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index', 'watch:assets'], function (done) {
+gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index', 'watch:assets', 'cache:templates'], function (done) {
     nodemon({
         script: 'src/api/server',
         ext: 'js',
@@ -26,11 +26,11 @@ gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index', 'watch:assets'], func
 });
 
 //Minify app and resources
-gulp.task('compile', ['compile:js', 'compile:sass', 'del-copy:index', 'del-copy:assets'], function () {
+gulp.task('compile', ['compile:js', 'compile:sass', 'del-copy:index', 'del-copy:assets', 'cache:templates'], function () {
     return html.copyDependencies();
 });
 
 //Build app injecting individual js files
-gulp.task('build', ['del-copy:js', 'del-copy:sass', 'del-copy:index', 'del-copy:assets'], function () {
+gulp.task('build', ['del-copy:js', 'del-copy:sass', 'del-copy:index', 'del-copy:assets', 'cache:templates'], function () {
     return html.copyDependencies();
 });
