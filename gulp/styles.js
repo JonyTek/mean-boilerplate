@@ -4,18 +4,20 @@ var del = require('del');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-//Compile scss to css, delete and move to build
-gulp.task('del-copy:sass', ['delete:css'], function () {
+function copy() {
     return gulp.src('src/app/styles/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('build/assets/css'));
+}
+
+//Compile scss to css, delete and move to build
+gulp.task('del-copy:sass', ['delete:css'], function () {
+    return copy();
 });
 
 //Compile scss to css and move to build
 gulp.task('copy:sass', function () {
-    return gulp.src('src/app/styles/main.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('build/assets/css'));
+    return copy();
 });
 
 //Compile and minify css then move to build

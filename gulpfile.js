@@ -13,7 +13,7 @@ fs.readdirSync(__dirname + '/gulp').forEach(function (task) {
 });
 
 //Dev task - watch all resources and run server
-gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index'], function () {
+gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index', 'watch:assets'], function () {
     nodemon({
         script: 'src/api/server',
         ext: 'js',
@@ -24,11 +24,11 @@ gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index'], function () {
 });
 
 //Minify app and resources
-gulp.task('compile', ['compile:js', 'compile:sass', 'copy:index'], function () {
+gulp.task('compile', ['compile:js', 'compile:sass', 'del-copy:index', 'del-copy:assets'], function () {
     return html.copyDependencies();
 });
 
 //Build app injecting individual js files
-gulp.task('build', ['build:js', 'build:sass', 'copy:index'], function () {
+gulp.task('build', ['del-copy:js', 'del-copy:sass', 'del-copy:index', 'del-copy:assets'], function () {
     return html.copyDependencies();
 });

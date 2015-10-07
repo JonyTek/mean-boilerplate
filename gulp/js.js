@@ -6,16 +6,19 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
 
-//Delete and copy individual js files to build
-gulp.task('del-copy:js', ['delete:js'], function () {
+function copy() {
     return gulp.src('src/app/**/*.js')
         .pipe(gulp.dest('build/assets/js'));
+}
+
+//Delete and copy individual js files to build
+gulp.task('del-copy:js', ['delete:js'], function () {
+    return copy();
 });
 
 //Copy individual js files to build
 gulp.task('copy:js', function () {
-    return gulp.src('src/app/**/*.js')
-        .pipe(gulp.dest('build/assets/js'));
+    return copy();
 });
 
 //Build and minify js files to single app.js for release
