@@ -5,7 +5,8 @@ var gulp = require('gulp');
 var inject = require('gulp-inject');
 var nodemon = require('gulp-nodemon');
 
-var html = require('./gulp/html')
+var spec = require('./gulp/test');
+var html = require('./gulp/html');
 
 //Require all gulp files
 fs.readdirSync(__dirname + '/gulp').forEach(function (task) {
@@ -13,13 +14,14 @@ fs.readdirSync(__dirname + '/gulp').forEach(function (task) {
 });
 
 //Dev task - watch all resources and run server
-gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index', 'watch:assets', 'run:unit'], function () {
+gulp.task('dev', ['watch:js', 'watch:sass', 'watch:index', 'watch:assets'], function (done) {
     nodemon({
         script: 'src/api/server',
         ext: 'js',
         ignore: ['app*', 'gulp*', 'build*']
     });
 
+    spec.runUnit(done);
     html.copyDependencies();
 });
 
