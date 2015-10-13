@@ -42,6 +42,11 @@ Step 5. Run init server
 gulp dev or npm start
 ```
 
+Step 6. Open browser
+```shell
+Application is accessible at http://localhost:3002
+```
+
 ## Additional gulp commands
 
 Build and minify all js & css
