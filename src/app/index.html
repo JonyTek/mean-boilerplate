@@ -5,23 +5,26 @@
     <title ng-bind="pageTitle"></title>
 
     <link href="vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="vendor/angular-ui-notification.min.css" rel="stylesheet">
+
     <!-- inject:css -->
     <!-- endinject -->
 
 </head>
-<body ng-app="mean-bp" ng-controller="AppCtrl as app">
+<body ng-app="mean-bp" ng-controller="AppCtrl as app"  role="document">
 
 <navigation></navigation>
 
 <div class="container main-content">
     <div ui-view="main"></div>
-
-    {{app.message}}
-
 </div>
 
+<script type="application/javascript" src="vendor/jquery.min.js"></script>
+<script type="application/javascript" src="vendor/bootstrap.min.js"></script>
 <script type="application/javascript" src="vendor/angular.min.js"></script>
 <script type="application/javascript" src="vendor/angular-ui-router.js"></script>
+<script type="application/javascript" src="vendor/angular-ui-notification.min.js"></script>
 
 <!-- inject:js -->
 <!-- endinject -->

@@ -1,0 +1,36 @@
+<div class="row">
+    <form role="form" name="loginForm" ng-submit="login.submit(loginForm.$valid)" novalidate>
+        <div class="col-lg-6">
+
+            <h2>Simple Login</h2>
+
+            <p class="form-error-message" ng-show="login.errorMessage">{{login.errorMessage}}</p>
+
+
+            <div class="form-group">
+                <label for="email">Enter Email</label>
+
+                <div class="input-group">
+                    <input type="email" class="form-control" id="email" name="email"
+                           placeholder="Email" required ng-model="login.user.email">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" name="password"
+                           placeholder="Password" required ng-model="login.user.password"
+                           ng-pattern="register.passwordRegex">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success btn-block"
+                   ng-disabled="loginForm.$invalid">
+        </div>
+    </form>
+
+</div>

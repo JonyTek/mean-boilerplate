@@ -9,8 +9,17 @@
 
     function UserSvc($http) {
         return {
-            getUser: function (username) {
-                return $http.get('/api/user?username=' + username);
+            register: function (user) {
+                return $http.post('api/register', user);
+            },
+            login: function (user) {
+                return $http.post('api/login', user);
+            },
+            logout: function () {
+                return $http.get('api/logout');
+            },
+            getUser: function () {
+                return $http.get('/api/user');
             }
         };
     }

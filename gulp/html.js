@@ -5,9 +5,10 @@ var gulp = require('gulp');
 var inject = require('gulp-inject');
 var series = require('stream-series');
 var templateCache = require('gulp-angular-templatecache');
+var livereload = require('gulp-livereload');
 
 var templateConfig = {
-    module : 'mean-bp'
+    module: 'mean-bp'
 }
 
 function copyDependencies() {
@@ -15,7 +16,8 @@ function copyDependencies() {
     var sources = gulp.src([
         '!build/assets/js/app.js',
         'build/assets/js/**/*.js',
-        'build/assets/css/*.css'
+        'build/assets/css/*.css',
+        'build/assets/scripts/**/*.js'
     ], {read: false});
 
     return gulp.src('build/index.html')
@@ -38,19 +40,20 @@ gulp.task('delete:index', function () {
 
 //Inject all js & css files into index.html
 gulp.task('inject:index', ['del-copy:index'], function () {
-    return copyDependencies();
+    copyDependencies();
 });
 
 //Watch index.html then copy to build on change
 gulp.task('watch:index', ['del-copy:index'], function () {
-    return gulp.watch('src/app/**/*.html', ['inject:index', 'cache:templates']);
+    return gulp.watch(['src/app/**/*.html', 'src/app/**/*.tpl.html'], ['inject:index', 'cache:templates']);
 });
 
 //Add templates to cache
 gulp.task('cache:templates', function () {
     return gulp.src('src/app/**/*.tpl.html')
         .pipe(templateCache(('templates', templateConfig)))
-        .pipe(gulp.dest('build/assets/js'));
+        .pipe(gulp.dest('build/assets/js'))
+        .pipe(livereload());
 });
 
 module.exports = {

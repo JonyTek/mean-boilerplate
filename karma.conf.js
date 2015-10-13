@@ -8,6 +8,7 @@ module.exports = function (config) {
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
             'node_modules/ui-router/angular-ui-router.js',
+            'bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
             'src/app/app.js',
             'src/app/**/*.js',
             'test/**/*.spec.js'

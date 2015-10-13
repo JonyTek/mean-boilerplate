@@ -7,10 +7,12 @@ var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
+var livereload = require('gulp-livereload');
 
 function copy() {
-    return gulp.src('src/app/**/*.js')
-        .pipe(gulp.dest('build/assets/js'));
+    return gulp.src(['src/app/**/*.js', '!src/app/assets/**/*.js'])
+        .pipe(gulp.dest('build/assets/js'))
+        .pipe(livereload());
 }
 
 //Delete and copy individual js files to build

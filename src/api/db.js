@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/startupSource", function () {
+mongoose.connect("mongodb://localhost/mean-bp", function () {
     console.log("mongo connected");
 });
 

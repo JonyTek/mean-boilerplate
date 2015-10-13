@@ -5,11 +5,17 @@
         .module('mean-bp')
         .controller('AppCtrl', AppCtrl);
 
-    AppCtrl.$inject = [];
+    AppCtrl.$inject = ['$scope', 'SessionSvc', 'AppConfig'];
 
-    function AppCtrl() {
+    function AppCtrl($scope, SessionSvc, AppConfig) {
         var vm = this;
 
-        vm.message = 'Hello world!';
+        $scope.$on('user.logged.in', function(e, user){
+            SessionSvc.set(AppConfig.userSessionKey, user);
+        });
+
+        $scope.$on('user.logged.out', function(e){
+            SessionSvc.remove(AppConfig.userSessionKey);
+        });
     }
 })();

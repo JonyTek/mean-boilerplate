@@ -1,0 +1,16 @@
+form {
+  .ng-touched {
+    &.ng-valid {
+      border: solid 1px $valid-dark;
+      border-left: solid 9px $valid-light;
+    }
+    &.ng-invalid {
+      border: solid 1px $invalid-dark;
+      border-left: solid 9px $invalid-light;
+    }
+  }
+}
+
+.form-error-message {
+  color: $invalid-light;
+}

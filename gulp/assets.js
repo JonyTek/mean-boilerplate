@@ -1,10 +1,12 @@
 var del = require('del');
 var gulp = require('gulp');
+var livereload = require('gulp-livereload');
 
 //Add any additional sub directories here
 //e.g. fonts
 var assetDirectories = [
-    'img'
+    'img',
+    'scripts'
 ];
 
 function copy() {
@@ -12,6 +14,8 @@ function copy() {
         gulp.src('src/app/assets/' + dir + '/**/*')
             .pipe(gulp.dest('build/assets/' + dir));
     });
+
+    return livereload.reload();
 }
 
 //Copy assets to build

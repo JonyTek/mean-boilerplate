@@ -3,11 +3,13 @@
 var del = require('del');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var livereload = require('gulp-livereload');
 
 function copy() {
     return gulp.src('src/app/styles/main.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('build/assets/css'));
+        .pipe(gulp.dest('build/assets/css'))
+        .pipe(livereload());
 }
 
 //Compile scss to css, delete and move to build

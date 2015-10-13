@@ -9,6 +9,8 @@ This template is build with [Gulp](http://gulpjs.com/) for tasks, [Sass]() for s
 * All templates are stored in $templateCache for increased performance
 * Routing is setup with [ui-router](https://github.com/angular-ui/ui-router)
 * Unit tests with [Jasmine](http://jasmine.github.io/) & [Karma](http://karma-runner.github.io/)
+* Live reload with [gulp-livereload](https://github.com/vohof/gulp-livereload)
+* Authorisation with [passport-local](https://github.com/jaredhanson/passport-local)
 
 ## Getting started
 

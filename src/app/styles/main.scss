@@ -1,11 +1,9 @@
 @import 'variables';
+@import 'forms';
 @import '../home/home';
-
-body {
-  //color: $red;
-  //background-color: $blue;
-}
+@import '../register/register';
 
 .main-content {
   padding-top: 90px;
 }
+

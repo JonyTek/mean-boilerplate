@@ -1,0 +1,100 @@
+<div class="row">
+    <form role="form" name="registrationForm" ng-submit="register.submit(registrationForm.$valid)" novalidate>
+        <div class="col-lg-6">
+
+            <h2>Simple Registration</h2>
+
+            <p class="form-error-message" ng-hide="register.user.email === register.user.confirmEmail">Emails do not
+                match.</p>
+
+            <p class="form-error-message" ng-hide="register.user.password === register.user.confirmPassword">Passwords do not
+                match.</p>
+
+            <p class="form-error-message" ng-show="register.errorMessage">{{register.errorMessage}}</p>
+
+
+
+
+            <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong>
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name"
+                           required ng-model="register.user.firstname">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name"
+                           required ng-model="register.user.lastname">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+
+                <div class="input-group">
+                    <input type="email" class="form-control" id="email" name="email"
+                           placeholder="Email" required ng-model="register.user.email">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmEmail">Confirm Email</label>
+
+                <div class="input-group">
+                    <input type="email" class="form-control" id="confirmEmail" name="confirmEmail"
+                           placeholder="Confirm Email" required
+                           same-as="register.user.email"
+                           ng-model="register.user.confirmEmail">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <span>(6 - 15 alphanumeric characters)</span>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" name="password"
+                           placeholder="Password" required ng-model="register.user.password"
+                           ng-pattern="register.passwordRegex">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+
+                <div class="input-group">
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                           placeholder="Confirm Password" required ng-model="register.user.confirmPassword"
+                           ng-pattern="register.passwordRegex"
+                           same-as="register.user.password">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                </div>
+            </div>
+
+            <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success btn-block"
+                   ng-disabled="registrationForm.$invalid || register.user.email !== register.user.confirmEmail || register.user.password !== register.user.confirmPassword">
+        </div>
+    </form>
+
+    <!--<div class="col-lg-5 col-md-push-1">-->
+    <!--<div class="col-md-12">-->
+    <!--<div class="alert alert-success">-->
+    <!--<strong><span class="glyphicon glyphicon-ok"></span> Success! Message sent.</strong>-->
+    <!--</div>-->
+    <!--<div class="alert alert-danger">-->
+    <!--<span class="glyphicon glyphicon-remove"></span><strong> Error! Please check all page inputs.</strong>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+</div>
