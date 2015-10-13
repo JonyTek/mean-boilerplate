@@ -14,10 +14,15 @@ This template is build with [Gulp](http://gulpjs.com/) for tasks, [Sass]() for s
 * Development mode injects individual angular files, prod mode will concatinate & minify. This allows for easy debugging
 
 ## Pages
+Currently the project starts with the following pages:
+Home (public)
+Register (public)
+Login (public)
+Profile (private)
 
 ## Getting started
 
-Step 1. Install [NodeJS](http://nodejs.org/download/)
+Step 1. Install [NodeJS](http://nodejs.org/download/) & [MongoDB](http://docs.mongodb.org/manual/installation/)
 
 Step 2. Checkout/ download project
 
@@ -27,9 +32,14 @@ cd path/to/project
 npm install
 ```
 
-Step 4. Run Gulp dev
+Step 4. Start mongodb
 ```shell
-gulp dev
+mongod
+```
+
+Step 5. Run init server
+```shell
+gulp dev or npm start
 ```
 
 ## Additional gulp commands
