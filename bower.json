@@ -1,0 +1,22 @@
+{
+  "name": "mean-boilerplate",
+  "version": "0.0.1",
+  "homepage": "https://github.com/JonyTek/mean-boilerplate",
+  "authors": [
+    "Jonathon Swieboda <johnny@webling.com.au>"
+  ],
+  "description": "A strater app for MEAN applications.",
+  "main": "index.js",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-notification": "~0.0.14"
+  }
+}
