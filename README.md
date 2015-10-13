@@ -15,10 +15,10 @@ This template is build with [Gulp](http://gulpjs.com/) for tasks, [Sass]() for s
 
 ## Pages
 Currently the project starts with the following pages:
-Home (public)
-Register (public)
-Login (public)
-Profile (private)
+* Home (public)
+* Register (public)
+* Login (public)
+* Profile (private)
 
 ## Getting started
 
